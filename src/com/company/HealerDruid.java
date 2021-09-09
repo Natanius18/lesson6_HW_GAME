@@ -1,6 +1,6 @@
 package com.company;
 
-public class HealerDruid extends Healer {
+public class HealerDruid extends Healer implements Trainee{
     private Beast beast;
 
     public Beast getBeast() {
@@ -29,5 +29,10 @@ public class HealerDruid extends Healer {
                             "\nСила исцеления: " + getPowerOfHealing() +
                                 "\nПрирученный зверь: " + beast
         );
+    }
+
+    @Override
+    public void train() {
+
     }
 }

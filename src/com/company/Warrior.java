@@ -1,6 +1,6 @@
 package com.company;
 
-public class Warrior extends Hero{
+public class Warrior extends Hero {
     private int damageMultiplier;
 
     public int getDamageMultiplier() {
@@ -19,4 +19,5 @@ public class Warrior extends Hero{
     public void hardBlow(){
         System.out.println("Ударил");
     }
+
 }

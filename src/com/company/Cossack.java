@@ -1,6 +1,6 @@
 package com.company;
 
-public class Cossack extends Warrior{
+public class Cossack extends Warrior implements Trainee{
     private Saber saber;
 
     public Cossack(int lifePoints, int level, int damage, int money, int damageMultiplier, Saber saber) {
@@ -21,5 +21,10 @@ public class Cossack extends Warrior{
                         "\nМножитель урона: "+ getDamageMultiplier() +
                         "\nСабля: " + saber
         );
+    }
+
+    @Override
+    public void train() {
+
     }
 }

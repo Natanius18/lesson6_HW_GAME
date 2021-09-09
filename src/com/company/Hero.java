@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class Hero {
+public class Hero{
     private int lifePoints;
     private int level;
     private int damage;
