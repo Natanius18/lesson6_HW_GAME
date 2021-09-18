@@ -1,4 +1,10 @@
-package com.company;
+package com.company.program;
+import com.company.weapon.Beast;
+import com.company.weapon.Saber;
+import com.company.hero.healer.Healer;
+import com.company.hero.healer.HealerDruid;
+import com.company.hero.Hero;
+import com.company.hero.warrior.Cossack;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -12,9 +18,11 @@ public class Main {
         Random random = new Random();
         int killsCounter = 0;
         String difficulty = scanner.next();
-        Hero john = new Hero(100, 1, 5, 0);
-        Hero enemy = new Hero(100, 1, 5, 0);
-        Healer healer = new Healer(100, 1, 0, 0, 10);
+        Saber startSaber = new Saber("Start saber", 10);
+        Hero john = new Cossack(100, 1, 5, 0, 3, startSaber);
+        Hero enemy = new Cossack(100, 1, 5, 0, 3, startSaber);
+        Beast beast = new Beast("Beast", 50, 100);
+        Healer healer = new HealerDruid(100, 1, 0, 0, beast);
         label1:
         while (true) {
             switch (difficulty) {
@@ -73,11 +81,11 @@ public class Main {
                             killsCounter = 0;
                             john.levelUp();
                         }
-                        enemy = new Hero(
+                        enemy = new Cossack(
                                 100,
                                 random.nextInt(john.getLevel() + 1),
                                 random.nextInt(john.getLevel() * Integer.parseInt(difficulty) + 5) + 1,
-                                0);
+                                0, 3, startSaber);
                         System.out.println("\nТвой новый противник:");
                         enemy.informationAboutHero();
 
@@ -101,7 +109,7 @@ public class Main {
                             amount = scanner.next();
                         }
                     }
-                    healer.treat(john, Integer.parseInt(amount));
+                    healer.heal(john, Integer.parseInt(amount));
                     break;
                 case "0":
                     break label;

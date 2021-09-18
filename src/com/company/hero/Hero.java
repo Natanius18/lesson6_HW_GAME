@@ -1,9 +1,8 @@
-package com.company;
+package com.company.hero;
 
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
-public class Hero{
+public abstract class Hero{
     private int lifePoints;
     private int level;
     private int damage;
@@ -16,15 +15,7 @@ public class Hero{
         this.money = money;
     }
 
-    public void informationAboutHero(){
-        System.out.print("Уровень: " + level + " ");
-        levelVisualisation();
-        System.out.print("Очки жизни: ");
-        System.out.println(lifePointsVisualisation1());
-        System.out.println("Урон: " + damage +
-                "\nКоличество монет: " + money);
-    }
-
+    public abstract void informationAboutHero();
     public int getLifePoints() {
         return lifePoints;
     }
@@ -58,7 +49,7 @@ public class Hero{
     }
 
     public String lifePointsVisualisation1(){
-        String out = String.valueOf(getLifePoints()) + " [";
+        String out = getLifePoints() + " [";
         for (int i = 0; i < 50; i++) {
             if (i < lifePoints/2) {
                 out += "■";
@@ -81,7 +72,7 @@ public class Hero{
                 out += "■";
             }
         }
-        out += "] " + String.valueOf(getLifePoints());
+        out += "] " + getLifePoints();
         return out;
     }
 

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.weapon;
 
 public class Beast {
     private String name;

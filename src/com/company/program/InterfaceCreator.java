@@ -1,4 +1,6 @@
-package com.company;
+package com.company.program;
+
+import com.company.hero.Hero;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +13,7 @@ public class InterfaceCreator {
 
     public void waitMe(int time) {
         try {
-            TimeUnit.SECONDS.sleep(time);
+            TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

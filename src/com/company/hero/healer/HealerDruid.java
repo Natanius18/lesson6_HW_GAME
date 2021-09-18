@@ -1,6 +1,9 @@
-package com.company;
+package com.company.hero.healer;
 
-public class HealerDruid extends Healer implements Trainee{
+import com.company.weapon.Beast;
+import com.company.program.Trainee;
+
+public class HealerDruid extends Healer implements Trainee {
     private Beast beast;
 
     public Beast getBeast() {
@@ -33,6 +36,6 @@ public class HealerDruid extends Healer implements Trainee{
 
     @Override
     public void train() {
-
+        setDamage(getDamage() + 5);
     }
 }

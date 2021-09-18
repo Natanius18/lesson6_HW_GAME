@@ -1,6 +1,9 @@
-package com.company;
+package com.company.hero.warrior;
 
-public class Cossack extends Warrior implements Trainee{
+import com.company.program.Trainee;
+import com.company.weapon.Saber;
+
+public class Cossack extends Warrior implements Trainee {
     private Saber saber;
 
     public Cossack(int lifePoints, int level, int damage, int money, int damageMultiplier, Saber saber) {
@@ -25,6 +28,6 @@ public class Cossack extends Warrior implements Trainee{
 
     @Override
     public void train() {
-
+        setDamage(getDamage() + 5);
     }
 }
